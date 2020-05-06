@@ -3,35 +3,36 @@ NAME = libftprintf.a
 
 SRCS = printf_regex.c printf_utils.c printf_validations.c printf.c
 
-OBJ = $(subst .c,.o,$(SRC))
+OBJS		= ${SRCS:.c=.o}
 
-CFLAGS = -Wall -Wextra -Werror
+NAME		= libftprintf.a
+
+CC			= cc
+
+RM			= rm -f
+
+CFLAGS		= -Wall -Werror -Wextra
 
 .c.o:
-		cc ${CFLAGS} -c $< -o ${<:.c=.o}
+			${CC} ${FLAGS} -c $< -o ${<:.c=.o}
 
-$(NAME):	${OBJ}
+$(NAME):	${OBJS}
 			cd libft && ${MAKE}
 			cp libft/libft.a ${NAME}
-			ar rc ${NAME} ${OBJ}
+			ar rc ${NAME} ${OBJS}
 			ranlib ${NAME}
 
-# $(NAME):
-		# gcc $(CFLAGS) -c $(SRC)
-		# ar -rcs $(NAME) $(OBJ)
-		# ranlib $(NAME)
-
-all: $(NAME)
+all:		${NAME}
 
 clean:
-	rm -f $(OBJ) 
-	${MAKE} clean -C ./libft
+			${RM} ${OBJS} ${OBJ_BONUS}
+			${MAKE} clean -C ./libft
 
-fclean: clean
-		rm -f $(NAME)
-		rm -f libft.all
-		${MAKE} fclean -C ./libft
+fclean : 	clean
+			${RM} ${NAME}
+			${RM} libft.a
+			${MAKE} fclean -C ./libft
 
-re: fclean all
+re:			fclean all
 
-.PHONY: clean fclean all re bonus
+.PHONY:		re all clean fclean
