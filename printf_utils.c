@@ -1,4 +1,4 @@
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 char    *ft_utohex(unsigned long int numb, char flag)
 {
@@ -62,7 +62,7 @@ char    *ft_utohex(unsigned long int numb, char flag)
     s2 = ft_strinv(s1);
     //printf("\n%s\n", s1);
     return (s2);
-};
+}
 
 void print_arg_with_minus_true(t_config *config, t_data_config *data_config, int ceros) {
     int z;
@@ -96,7 +96,7 @@ void print_arg_with_minus_true(t_config *config, t_data_config *data_config, int
         ft_putchar(config->width_char);
         z++;
     }
-};
+}
 
 void print_arg_with_minus_false(t_config *config, t_data_config *data_config, int ceros) {
     int z;
@@ -132,7 +132,7 @@ void print_arg_with_minus_false(t_config *config, t_data_config *data_config, in
                     
         }
     }
-};
+}
 
 
 void is_numb_negative(unsigned long int *numb, int *is_negative) {
@@ -141,4 +141,4 @@ void is_numb_negative(unsigned long int *numb, int *is_negative) {
         *numb *= -1;
         *is_negative = 1;
     }
-};
+}

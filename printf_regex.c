@@ -1,4 +1,4 @@
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int    arg_config_to_print(t_config *config, int is_negative, t_data_config *data_config) {
     int     ceros;
@@ -22,7 +22,7 @@ int    arg_config_to_print(t_config *config, int is_negative, t_data_config *dat
     else if (config->width < data_config->len)
         config->width = data_config->len;
     return (ceros);
-};
+}
 
 
 void    printf_arg_width_is_high(t_config *config, t_data_config *data_config, int ceros) {
@@ -30,7 +30,7 @@ void    printf_arg_width_is_high(t_config *config, t_data_config *data_config, i
         print_arg_with_minus_true(config, data_config, ceros);
     else
         print_arg_with_minus_false(config, data_config, ceros);
-};
+}
 
 void    printf_arg_width_is_low(t_config *config, t_data_config *data_config, int ceros) {
     int j;
@@ -56,14 +56,14 @@ void    printf_arg_width_is_low(t_config *config, t_data_config *data_config, in
             j++;
         }
     }
-};
+}
 
 void    printf_printing_arg(t_config *config, t_data_config *data_config, int ceros) {
     if (config->width > config->precision)
         printf_arg_width_is_high(config, data_config, ceros);
     else 
         printf_arg_width_is_low(config, data_config, ceros);
-};
+}
 
 void    printf_arg_hex(t_config *config, va_list *args)
 {    

@@ -1,4 +1,4 @@
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 void get_number_in_range(int *index, char *s1, int *property, int *property_len)
 {

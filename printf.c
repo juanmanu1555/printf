@@ -1,4 +1,4 @@
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int regex_validate(int *index, char *s1, t_config *config)
 {
