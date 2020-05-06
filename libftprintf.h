@@ -2,10 +2,9 @@
 # define LIBFTPRINTF_H
 
 # include <unistd.h>
-# include <stdio.h>
 # include <stdarg.h>
-# include <stdlib.h>
-# include <string.h>
+# include "./libft/libft.h"
+# include <stdio.h>
 
 typedef struct      s_config {
     int     width;
@@ -32,6 +31,7 @@ typedef struct      s_data_config {
 #define t_config_default (t_config){0, 0,' ', -1, 0, 0, 0, 0 ,0, 0, 0, 0}
 #define t_data_config_default (t_data_config) { -1, NULL, -1, -1 }
 
+int ft_printf(const char *s1, ...);
 void    is_numb_negative(unsigned long int *numb, int *is_negative);
 void    print_arg_with_minus_true(t_config *config, t_data_config *data_config, int ceros); 
 void    print_arg_with_minus_false(t_config *config, t_data_config *data_config, int ceros); 

@@ -1,7 +1,4 @@
-
-NAME = libftprintf.a
-
-SRCS = printf_regex.c printf_utils.c printf_validations.c printf.c
+SRCS		= printf.c printf_regex.c printf_utils.c printf_validations.c
 
 OBJS		= ${SRCS:.c=.o}
 
