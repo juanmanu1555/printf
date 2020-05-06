@@ -1,5 +1,29 @@
 #include "ft_printf.h"
 
+char    *ft_strinv(char *s1)
+{
+    long long int len;
+    char *s2;
+    size_t j;
+
+    j = 0;
+    len = ft_strlen(s1);
+    //printf("\n%llu\n", len);
+    //printf("\n%s\n", s1);
+    if (!(s2 = malloc(sizeof(char) * (len + 1))))
+      return (NULL);
+    while (len > 0)
+    {
+        //printf("\n%c\n", *s1++);
+        s2[j] = s1[len - 1];
+        j++;
+        len--;
+    }
+    s2[j] = 0;
+    //printf("\n%s\n", s2);
+    return (s2);
+}
+
 char    *ft_utohex(unsigned long int numb, char flag)
 {
     char *s1;
@@ -25,7 +49,7 @@ char    *ft_utohex(unsigned long int numb, char flag)
 
     if (flag == 'x')
         hexa_array = ft_strdup("0123456789abcdef");
-    else if (flag = 'X')
+    else if (flag == 'X')
         hexa_array = ft_strdup("0123456789ABCDEF");
     while (res > 0)
     {

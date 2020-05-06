@@ -8,7 +8,7 @@ int    arg_config_to_print(t_config *config, int is_negative, t_data_config *dat
         config->width_char = ' ';
     if (config->precision > data_config->len)
         ceros = config->precision - data_config->len;
-    else if (config->precision < data_config->len  && config->precision > 0 || config->precision == -1 )
+    else if ((config->precision < data_config->len  && config->precision > 0) || (config->precision == -1 ))
         config->precision = data_config->len;
     if (is_negative && config->precision != 0)
     {    
