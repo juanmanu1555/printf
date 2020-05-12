@@ -83,6 +83,7 @@ void    printf_arg_hex(t_config *config, va_list *args)
     // este cambio importante
     // el retorno de este tiene que ir directamente en printf_printing arg para ahorrarnos una variable
     printf_printing_arg(config, &data_config, arg_config_to_print(config, is_negative, &data_config));
+	free(data_config.string_to_print);
 }
 
 //lo suyo es cambiar todo lo que necesito para imprimir de variables por un objeto typedef.

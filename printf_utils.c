@@ -41,7 +41,7 @@ char    *ft_utohex(unsigned long int numb, char flag)
         s1[1] = '\0';
         return (s1);
     }
-    s1  = malloc(4000);
+    s1  = malloc(sizeof(char) *  8);
     res = numb;
     div = 0;
     j = 0;
@@ -84,6 +84,7 @@ char    *ft_utohex(unsigned long int numb, char flag)
     }
     //printf("\n%lu\n", res);
     s2 = ft_strinv(s1);
+	free(s1);
     //printf("\n%s\n", s1);
     return (s2);
 }
